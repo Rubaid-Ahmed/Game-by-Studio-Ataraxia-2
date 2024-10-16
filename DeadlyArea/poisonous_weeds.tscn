@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ggrx56owiw03"]
+
+[ext_resource type="Script" path="res://DeadlyArea/poisonous_weeds.gd" id="1_2x0gg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r2cl8"]
+
+[node name="PoisonousWeeds" type="Area2D"]
+script = ExtResource("1_2x0gg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_r2cl8")

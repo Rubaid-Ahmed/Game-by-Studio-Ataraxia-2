@@ -1,0 +1,433 @@
+[gd_scene load_steps=54 format=3 uid="uid://e8dp2hvvdvaf"]
+
+[ext_resource type="Script" path="res://New_Players/red_saber.gd" id="1_px7g5"]
+[ext_resource type="Texture2D" uid="uid://b3qaurpkf342n" path="res://New_Players/Character Sprite Sheet/Red Saber/down.png" id="2_xefmg"]
+[ext_resource type="Texture2D" uid="uid://dtbfy1fcna7tc" path="res://New_Players/Character Sprite Sheet/Red Saber/idle.png" id="3_g74vb"]
+[ext_resource type="Texture2D" uid="uid://bf71b7boe1rbm" path="res://New_Players/Character Sprite Sheet/Red Saber/left.png" id="4_m5h27"]
+[ext_resource type="Texture2D" uid="uid://bjn6x0uhtpxea" path="res://New_Players/Character Sprite Sheet/Red Saber/right.png" id="5_g4h71"]
+[ext_resource type="Texture2D" uid="uid://bcyad3moebeto" path="res://New_Players/Character Sprite Sheet/Red Saber/up.png" id="6_hqef5"]
+[ext_resource type="Texture2D" uid="uid://iuv7g2mqwyv7" path="res://Inventory/default_inventory_background.png" id="7_6ww45"]
+[ext_resource type="Script" path="res://New_Players/area_2d.gd" id="7_nvrq6"]
+[ext_resource type="Texture2D" uid="uid://0nr5y5w2cr11" path="res://Inventory/item_slot_default_background.png" id="8_1qnxn"]
+[ext_resource type="Texture2D" uid="uid://b6xmrgvmd33ye" path="res://Inventory/player_icons/6.png" id="9_pd35q"]
+[ext_resource type="Texture2D" uid="uid://ddfwleh88st0l" path="res://New_Players/Character Sprite Sheet/Kirito/light.png" id="11_omb34"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5nc7"]
+atlas = ExtResource("2_xefmg")
+region = Rect2(0, 0, 64, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfors"]
+atlas = ExtResource("2_xefmg")
+region = Rect2(64, 0, 64, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmsnh"]
+atlas = ExtResource("2_xefmg")
+region = Rect2(128, 0, 64, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vyrt"]
+atlas = ExtResource("2_xefmg")
+region = Rect2(192, 0, 64, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0wcq"]
+atlas = ExtResource("2_xefmg")
+region = Rect2(256, 0, 64, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqng5"]
+atlas = ExtResource("2_xefmg")
+region = Rect2(320, 0, 64, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg2y0"]
+atlas = ExtResource("2_xefmg")
+region = Rect2(384, 0, 64, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlyja"]
+atlas = ExtResource("2_xefmg")
+region = Rect2(448, 0, 64, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5116q"]
+atlas = ExtResource("2_xefmg")
+region = Rect2(512, 0, 64, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md13v"]
+atlas = ExtResource("3_g74vb")
+region = Rect2(0, 0, 65, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34k31"]
+atlas = ExtResource("3_g74vb")
+region = Rect2(65, 0, 65, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8oabr"]
+atlas = ExtResource("3_g74vb")
+region = Rect2(130, 0, 65, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7e57c"]
+atlas = ExtResource("4_m5h27")
+region = Rect2(0, 0, 63, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcy2n"]
+atlas = ExtResource("4_m5h27")
+region = Rect2(63, 0, 63, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48sum"]
+atlas = ExtResource("4_m5h27")
+region = Rect2(126, 0, 63, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxxlq"]
+atlas = ExtResource("4_m5h27")
+region = Rect2(189, 0, 63, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t48yd"]
+atlas = ExtResource("4_m5h27")
+region = Rect2(252, 0, 63, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mskhm"]
+atlas = ExtResource("4_m5h27")
+region = Rect2(315, 0, 63, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccivr"]
+atlas = ExtResource("4_m5h27")
+region = Rect2(378, 0, 63, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpqeh"]
+atlas = ExtResource("4_m5h27")
+region = Rect2(441, 0, 63, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iynoo"]
+atlas = ExtResource("4_m5h27")
+region = Rect2(504, 0, 63, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h14e8"]
+atlas = ExtResource("5_g4h71")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjcyf"]
+atlas = ExtResource("5_g4h71")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbmes"]
+atlas = ExtResource("5_g4h71")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrl4p"]
+atlas = ExtResource("5_g4h71")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xt1mu"]
+atlas = ExtResource("5_g4h71")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m36d"]
+atlas = ExtResource("5_g4h71")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqsde"]
+atlas = ExtResource("5_g4h71")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3h8c"]
+atlas = ExtResource("5_g4h71")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1xds"]
+atlas = ExtResource("5_g4h71")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur46k"]
+atlas = ExtResource("6_hqef5")
+region = Rect2(0, 0, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jjpx"]
+atlas = ExtResource("6_hqef5")
+region = Rect2(64, 0, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ubf2"]
+atlas = ExtResource("6_hqef5")
+region = Rect2(128, 0, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjdea"]
+atlas = ExtResource("6_hqef5")
+region = Rect2(192, 0, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl7ae"]
+atlas = ExtResource("6_hqef5")
+region = Rect2(256, 0, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v3dm"]
+atlas = ExtResource("6_hqef5")
+region = Rect2(320, 0, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5py0g"]
+atlas = ExtResource("6_hqef5")
+region = Rect2(384, 0, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmxpe"]
+atlas = ExtResource("6_hqef5")
+region = Rect2(448, 0, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h688"]
+atlas = ExtResource("6_hqef5")
+region = Rect2(512, 0, 64, 63)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yquwf"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5nc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfors")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmsnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vyrt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0wcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqng5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg2y0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlyja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5116q")
+}],
+"loop": true,
+"name": &"down",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md13v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34k31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8oabr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7e57c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcy2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48sum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxxlq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t48yd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mskhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccivr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpqeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iynoo")
+}],
+"loop": true,
+"name": &"left",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h14e8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjcyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbmes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrl4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xt1mu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8m36d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqsde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3h8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1xds")
+}],
+"loop": true,
+"name": &"right",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur46k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jjpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ubf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjdea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nl7ae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v3dm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5py0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmxpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h688")
+}],
+"loop": true,
+"name": &"up",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u6plk"]
+radius = 17.3333
+height = 48.8
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6k6v0"]
+texture = ExtResource("8_1qnxn")
+
+[node name="red saber" type="CharacterBody2D"]
+position = Vector2(22, 0)
+scale = Vector2(1.3, 1.3)
+collision_layer = 2
+script = ExtResource("1_px7g5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-8, -24.6667)
+sprite_frames = SubResource("SpriteFrames_yquwf")
+animation = &"new_animation_1"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, -26)
+shape = SubResource("CapsuleShape2D_u6plk")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("7_nvrq6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-8, -26)
+shape = SubResource("CapsuleShape2D_u6plk")
+
+[node name="InventoryUIRedSaber" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Inventory" type="TextureRect" parent="InventoryUIRedSaber"]
+layout_mode = 0
+offset_left = -369.231
+offset_top = -193.846
+offset_right = -162.231
+offset_bottom = -81.8462
+scale = Vector2(3, 3)
+texture = ExtResource("7_6ww45")
+
+[node name="Grid Container" type="GridContainer" parent="InventoryUIRedSaber/Inventory"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 18.0
+offset_right = 202.0
+offset_bottom = 112.0
+theme_override_constants/h_separation = 21
+theme_override_constants/v_separation = 17
+columns = 3
+
+[node name="Slot" type="Panel" parent="InventoryUIRedSaber/Inventory/Grid Container"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6k6v0")
+
+[node name="Slot2" type="Panel" parent="InventoryUIRedSaber/Inventory/Grid Container"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6k6v0")
+
+[node name="Slot3" type="Panel" parent="InventoryUIRedSaber/Inventory/Grid Container"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6k6v0")
+
+[node name="Slot4" type="Panel" parent="InventoryUIRedSaber/Inventory/Grid Container"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6k6v0")
+
+[node name="Slot5" type="Panel" parent="InventoryUIRedSaber/Inventory/Grid Container"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6k6v0")
+
+[node name="Slot6" type="Panel" parent="InventoryUIRedSaber/Inventory/Grid Container"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6k6v0")
+
+[node name="Slot7" type="Panel" parent="InventoryUIRedSaber/Inventory/Grid Container"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6k6v0")
+
+[node name="Slot8" type="Panel" parent="InventoryUIRedSaber/Inventory/Grid Container"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6k6v0")
+
+[node name="Slot9" type="Panel" parent="InventoryUIRedSaber/Inventory/Grid Container"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6k6v0")
+
+[node name="player icon" type="TextureRect" parent="InventoryUIRedSaber/Inventory"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 103.0
+texture = ExtResource("9_pd35q")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 2.0
+blend_mode = 2
+texture = ExtResource("11_omb34")
+texture_scale = 0.5
