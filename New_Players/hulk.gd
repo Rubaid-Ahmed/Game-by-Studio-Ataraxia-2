@@ -1,16 +1,15 @@
 extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var character_camera: Camera2D = $BlueElf_Camera
+@onready var character_camera: Camera2D = $Hulk_Camera # Generic name, adjust in the scene as needed
 @onready var inventory_ui: Control = $InventoryUI
-
 @onready var torch = preload("res://Inventory/items/torch.tres")
 
 @export var speed : int = 500
 @export var max_horizontal_speed : int = 300
 @export var slow_down_speed : int = 1700
-@export var player_id: int = 1  # Assign a unique ID (0-6) in the inspector for each player
-@export var inventory : Inv
+@export var player_id: int = 2 
+@export var inventory : Inv # Assign a unique ID (0-6) in the inspector for each player
 
 enum State {Idle, Walk, Dead}
 var current_state : State
@@ -67,6 +66,7 @@ func _physics_process(delta: float) -> void:
 		input_movement()
 		move_and_slide()
 		player_animations()
+
 
 func player_idle(delta: float):
 	if !is_alive:

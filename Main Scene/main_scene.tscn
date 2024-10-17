@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://44xtea55rj0w"]
+[gd_scene load_steps=19 format=3 uid="uid://44xtea55rj0w"]
 
 [ext_resource type="PackedScene" uid="uid://ctxf4462ym2w7" path="res://Maze/tile_map.tscn" id="1_7da0c"]
 [ext_resource type="Script" path="res://Main Scene/main_scene.gd" id="1_emlyo"]
@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://b8vd6hyknxt8d" path="res://Main Scene/slime_collectible.tscn" id="12_i43wb"]
 [ext_resource type="PackedScene" uid="uid://cy7c33hum0g15" path="res://New_Players/Chainsaw man.tscn" id="13_ljlj3"]
 [ext_resource type="PackedScene" uid="uid://ekw7s4eafvo1" path="res://Main Scene/coin_bag_collectible.tscn" id="14_4myrk"]
+[ext_resource type="PackedScene" uid="uid://b5bb8pudf6px0" path="res://New_Players/Hulk.tscn" id="15_n0sth"]
+[ext_resource type="PackedScene" uid="uid://ctjds34xmy6aq" path="res://New_Players/Mage.tscn" id="16_7oce1"]
+[ext_resource type="PackedScene" uid="uid://dl3nv2xlo7tim" path="res://New_Players/mad scientist.tscn" id="17_2h36y"]
 
 [sub_resource type="GDScript" id="GDScript_jxfy6"]
 script/source = "extends Camera2D
@@ -146,6 +149,36 @@ position = Vector2(2673, -615)
 
 [node name="Coin_bag" parent="." instance=ExtResource("14_4myrk")]
 position = Vector2(2541, -648)
+
+[node name="hulk" parent="." instance=ExtResource("15_n0sth")]
+position = Vector2(4105, -569)
+
+[node name="Hulk_Camera" type="Camera2D" parent="hulk"]
+limit_left = 470
+limit_top = -6800
+limit_right = 6000
+limit_bottom = -375
+script = ExtResource("10_1ljmy")
+
+[node name="mage" parent="." instance=ExtResource("16_7oce1")]
+position = Vector2(3476, -711)
+
+[node name="Mage_Camera" type="Camera2D" parent="mage"]
+limit_left = 470
+limit_top = -6800
+limit_right = 6000
+limit_bottom = -375
+script = ExtResource("10_1ljmy")
+
+[node name="mad scientist" parent="." instance=ExtResource("17_2h36y")]
+position = Vector2(2972, -918)
+
+[node name="MadScientist_Camera" type="Camera2D" parent="mad scientist"]
+limit_left = 470
+limit_top = -6800
+limit_right = 6000
+limit_bottom = -375
+script = ExtResource("10_1ljmy")
 
 [connection signal="body_entered" from="PoisonousWeeds" to="PoisonousWeeds" method="_on_body_entered"]
 [connection signal="character_frozen" from="PoisonousWeeds" to="Sword" method="_on_poisonous_weeds_character_frozen"]
