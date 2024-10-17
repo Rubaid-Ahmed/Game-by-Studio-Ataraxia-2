@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://dlqsn853qdqs"]
+[gd_scene load_steps=60 format=3 uid="uid://dlqsn853qdqs"]
 
 [ext_resource type="Script" path="res://New_Players/Kirito.gd" id="1_ifw6k"]
 [ext_resource type="Texture2D" uid="uid://c0nxwxwbsds27" path="res://New_Players/Character Sprite Sheet/Kirito/down.png" id="2_2m751"]
@@ -9,9 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ct2vv1shlkyvb" path="res://New_Players/Character Sprite Sheet/Kirito/up.png" id="6_ije62"]
 [ext_resource type="Texture2D" uid="uid://ddfwleh88st0l" path="res://New_Players/Character Sprite Sheet/Kirito/light.png" id="7_7bqti"]
 [ext_resource type="Script" path="res://New_Players/area_2d.gd" id="7_vn42t"]
-[ext_resource type="Texture2D" uid="uid://iuv7g2mqwyv7" path="res://Inventory/default_inventory_background.png" id="11_him3m"]
-[ext_resource type="Texture2D" uid="uid://0nr5y5w2cr11" path="res://Inventory/item_slot_default_background.png" id="12_ahy2v"]
-[ext_resource type="Texture2D" uid="uid://3abknuevvpxa" path="res://Inventory/player_icons/3.png" id="13_hxp8o"]
+[ext_resource type="PackedScene" uid="uid://bds25y4t3rdns" path="res://Inventory/inventory_ui.tscn" id="10_faesx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s2u5p"]
 atlas = ExtResource("2_t7yxr")
@@ -384,9 +382,6 @@ animations = [{
 radius = 17.3333
 height = 45.1281
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q4but"]
-texture = ExtResource("12_ahy2v")
-
 [node name="kirito" type="CharacterBody2D"]
 position = Vector2(12, -3)
 scale = Vector2(1.3, 1.3)
@@ -419,80 +414,8 @@ blend_mode = 2
 texture = ExtResource("7_7bqti")
 texture_scale = 0.5
 
-[node name="InventoryUIKirito" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Inventory" type="TextureRect" parent="InventoryUIKirito"]
-layout_mode = 0
-offset_left = -369.231
-offset_top = -193.846
-offset_right = -162.231
-offset_bottom = -81.8462
-scale = Vector2(3, 3)
-texture = ExtResource("11_him3m")
-
-[node name="Grid Container" type="GridContainer" parent="InventoryUIKirito/Inventory"]
-layout_mode = 0
-offset_left = 104.0
-offset_top = 18.0
-offset_right = 202.0
-offset_bottom = 112.0
-theme_override_constants/h_separation = 21
-theme_override_constants/v_separation = 17
-columns = 3
-
-[node name="Slot" type="Panel" parent="InventoryUIKirito/Inventory/Grid Container"]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_q4but")
-
-[node name="Slot2" type="Panel" parent="InventoryUIKirito/Inventory/Grid Container"]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_q4but")
-
-[node name="Slot3" type="Panel" parent="InventoryUIKirito/Inventory/Grid Container"]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_q4but")
-
-[node name="Slot4" type="Panel" parent="InventoryUIKirito/Inventory/Grid Container"]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_q4but")
-
-[node name="Slot5" type="Panel" parent="InventoryUIKirito/Inventory/Grid Container"]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_q4but")
-
-[node name="Slot6" type="Panel" parent="InventoryUIKirito/Inventory/Grid Container"]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_q4but")
-
-[node name="Slot7" type="Panel" parent="InventoryUIKirito/Inventory/Grid Container"]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_q4but")
-
-[node name="Slot8" type="Panel" parent="InventoryUIKirito/Inventory/Grid Container"]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_q4but")
-
-[node name="Slot9" type="Panel" parent="InventoryUIKirito/Inventory/Grid Container"]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_q4but")
-
-[node name="player icon" type="TextureRect" parent="InventoryUIKirito/Inventory"]
-layout_mode = 0
-offset_left = 40.7692
-offset_top = 25.3846
-offset_right = 95.7692
-offset_bottom = 103.385
-texture = ExtResource("13_hxp8o")
+[node name="InventoryUI" parent="." instance=ExtResource("10_faesx")]
+offset_left = -127.692
+offset_top = -265.385
+offset_right = 107.308
+offset_bottom = -50.3846

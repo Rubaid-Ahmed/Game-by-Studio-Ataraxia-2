@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://44xtea55rj0w"]
+[gd_scene load_steps=15 format=3 uid="uid://44xtea55rj0w"]
 
 [ext_resource type="PackedScene" uid="uid://ctxf4462ym2w7" path="res://Maze/tile_map.tscn" id="1_7da0c"]
 [ext_resource type="Script" path="res://Main Scene/main_scene.gd" id="1_emlyo"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://ggrx56owiw03" path="res://DeadlyArea/poisonous_weeds.tscn" id="9_sigla"]
 [ext_resource type="Script" path="res://Main Scene/saber_camera.gd" id="10_1ljmy"]
 [ext_resource type="PackedScene" uid="uid://bq0vluhvo4sg2" path="res://Items/sword.tscn" id="10_isr2x"]
+[ext_resource type="PackedScene" uid="uid://bw1jg6r4km4c6" path="res://Main Scene/stick_collectible.tscn" id="11_xuxvn"]
+[ext_resource type="PackedScene" uid="uid://b8vd6hyknxt8d" path="res://Main Scene/slime_collectible.tscn" id="12_i43wb"]
+[ext_resource type="PackedScene" uid="uid://cy7c33hum0g15" path="res://New_Players/Chainsaw man.tscn" id="13_ljlj3"]
 
 [sub_resource type="GDScript" id="GDScript_jxfy6"]
 script/source = "extends Camera2D
@@ -75,6 +78,12 @@ limit_right = 6000
 limit_bottom = -375
 script = SubResource("GDScript_jxfy6")
 
+[node name="stick_collectible" parent="." instance=ExtResource("11_xuxvn")]
+position = Vector2(2733, -635)
+
+[node name="stick_collectible2" parent="." instance=ExtResource("11_xuxvn")]
+position = Vector2(2901, -647)
+
 [node name="blue elf" parent="." instance=ExtResource("2_wayqx")]
 position = Vector2(2499, -606)
 
@@ -86,7 +95,7 @@ limit_bottom = -375
 script = ExtResource("3_ga3bn")
 
 [node name="kirito" parent="." instance=ExtResource("5_e5x8x")]
-position = Vector2(5266, -3563)
+position = Vector2(2912, -475)
 
 [node name="Kirito_Camera" type="Camera2D" parent="kirito"]
 limit_left = 470
@@ -96,7 +105,7 @@ limit_bottom = -375
 script = ExtResource("6_esydi")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.0122093, 0.0819412, 0.145042, 1)
+color = Color(0.885514, 0.238823, 0.617723, 1)
 
 [node name="PoisonousWeeds" parent="." instance=ExtResource("9_sigla")]
 position = Vector2(3583, -2916)
@@ -116,6 +125,23 @@ limit_top = -6800
 limit_right = 6000
 limit_bottom = -375
 script = ExtResource("10_1ljmy")
+
+[node name="stick_collectible3" parent="." instance=ExtResource("11_xuxvn")]
+position = Vector2(2448, -3761)
+
+[node name="stick_collectible4" parent="." instance=ExtResource("11_xuxvn")]
+position = Vector2(2036, -3935)
+
+[node name="slime_collectible" parent="." instance=ExtResource("12_i43wb")]
+position = Vector2(2994, -469)
+
+[node name="slime_collectible2" parent="." instance=ExtResource("12_i43wb")]
+position = Vector2(2600, -620)
+
+[node name="chainsaw man" parent="." instance=ExtResource("13_ljlj3")]
+position = Vector2(2673, -615)
+
+[node name="ChainsawMan_Camera" type="Camera2D" parent="chainsaw man"]
 
 [connection signal="body_entered" from="PoisonousWeeds" to="PoisonousWeeds" method="_on_body_entered"]
 [connection signal="character_frozen" from="PoisonousWeeds" to="Sword" method="_on_poisonous_weeds_character_frozen"]

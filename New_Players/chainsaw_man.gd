@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var character_camera: Camera2D = $Kirito_Camera # Generic name, adjust in the scene as needed
+@onready var character_camera: Camera2D = $ChainsawMan_Camera# reference the camera
 @onready var inventory_ui: Control = $InventoryUI
 
 @export var speed : int = 500
 @export var max_horizontal_speed : int = 300
 @export var slow_down_speed : int = 1700
-@export var player_id: int = 3 
+@export var player_id: int = 0 
 @export var inventory : Inv # Assign a unique ID (0-6) in the inspector for each player
 
 enum State {Idle, Walk, Dead}

@@ -2,12 +2,14 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var character_camera: Camera2D = $BlueElf_Camera
-@onready var inventory_ui: Control = $InventoryUIBlueElf # Generic name, adjust in the scene as needed
+@onready var inventory_ui: Control = $InventoryUI
+
 
 @export var speed : int = 500
 @export var max_horizontal_speed : int = 300
 @export var slow_down_speed : int = 1700
 @export var player_id: int = 3  # Assign a unique ID (0-6) in the inspector for each player
+@export var inventory : Inv
 
 enum State {Idle, Walk, Dead}
 var current_state : State
@@ -16,14 +18,33 @@ var frozen = false
 var is_alive
 
 func _ready():
+	# Create new inventory for this character
+	inventory = Inv.new()
+	inventory.slots = []
+	for i in range(9):
+		var slot = InvSlot.new()
+		slot.item = null
+		slot.amount = 0
+		inventory.slots.append(slot)
+	
+	# Setup inventory UI
+	if inventory_ui:
+		inventory_ui.set_character_inventory(inventory)
+		inventory_ui.close()  # Start with inventory closed
+	
 	is_alive = true
 	current_state = State.Idle
 	set_process_input(true)
 	add_to_group("characters")
-	if inventory_ui:
-		inventory_ui.hide()
-	else:
-		print("Warning: inventory_ui not found for ", name)
+	
+func _process(delta: float) -> void:
+	# Only process inventory input if this character is selected
+	if is_selected and Input.is_action_just_pressed("open_inventory"):
+		if inventory_ui:
+			if inventory_ui.is_open:
+				inventory_ui.close()
+			else:
+				inventory_ui.open()
 
 func get_player_id():
 	return player_id
@@ -43,13 +64,6 @@ func _physics_process(delta: float) -> void:
 		input_movement()
 		move_and_slide()
 		player_animations()
-
-func toggle_inventory():
-	if inventory_ui:
-		inventory_ui.visible = !inventory_ui.visible
-		print("Inventory visibility for", self.name, ":", inventory_ui.visible)
-	else:
-		print("Error: inventory_ui not found for ", name)
 
 func player_idle(delta: float):
 	if !is_alive:
@@ -116,3 +130,6 @@ func die():
 	animated_sprite_2d.play("death")
 	await get_tree().create_timer(2).timeout
 	queue_free()
+	
+func collect(item):
+	inventory.insert(item)
