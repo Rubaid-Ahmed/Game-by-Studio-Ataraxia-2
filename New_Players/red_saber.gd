@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var character_camera: Camera2D = $RedSaber_Camera
 @onready var inventory_ui: Control = $InventoryUI
+@onready var torch = preload("res://Inventory/items/torch.tres")
+@onready var key = preload("res://Inventory/items/red_key.tres")
 
 
 @export var speed : int = 500
@@ -27,6 +29,9 @@ func _ready():
 		slot.item = null
 		slot.amount = 0
 		inventory.slots.append(slot)
+	
+	inventory.insert(torch)
+	inventory.insert(key)
 	
 	# Setup inventory UI
 	if inventory_ui:

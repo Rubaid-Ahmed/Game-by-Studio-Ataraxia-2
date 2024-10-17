@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cy7c33hum0g15"]
+[gd_scene load_steps=52 format=3 uid="uid://cy7c33hum0g15"]
 
 [ext_resource type="Script" path="res://New_Players/chainsaw_man.gd" id="1_7e44e"]
 [ext_resource type="Resource" uid="uid://b5in4hdt3usad" path="res://Inventory/chainsaw_inv.tres" id="2_7u7hh"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dlvj7jd1b4slr" path="res://New_Players/Character Sprite Sheet/Bald Chainsaw Man/up.png" id="6_taj24"]
 [ext_resource type="Script" path="res://New_Players/area_2d.gd" id="7_djbvf"]
 [ext_resource type="PackedScene" uid="uid://bds25y4t3rdns" path="res://Inventory/inventory_ui.tscn" id="8_0obat"]
+[ext_resource type="Texture2D" uid="uid://hacvjvcl3jdm" path="res://New_Players/Character Sprite Sheet/Blue Elf/light.png" id="10_qklt6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_snbdb"]
 atlas = ExtResource("2_tj2g2")
@@ -350,3 +351,9 @@ offset_left = -122.308
 offset_top = -266.923
 offset_right = 112.692
 offset_bottom = -51.9231
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 2.0
+blend_mode = 2
+texture = ExtResource("10_qklt6")
+texture_scale = 0.5

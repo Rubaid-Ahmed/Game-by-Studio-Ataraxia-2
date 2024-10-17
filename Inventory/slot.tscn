@@ -24,7 +24,7 @@ offset_bottom = 64.0
 layout_mode = 2
 
 [node name="item_display" type="Sprite2D" parent="CenterContainer/Panel"]
-position = Vector2(0, -2)
+position = Vector2(-20, -15)
 centered = false
 
 [node name="Label" type="Label" parent="CenterContainer/Panel"]

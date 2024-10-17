@@ -3,6 +3,9 @@ extends Area2D
 @onready var sprite = $AnimatedSprite2D
 @onready var sword_light = $PointLight2D
 
+@export var item: InvItem
+var player = null
+
 signal character_killed(character_name: String)
 signal sword_retrieved
 
@@ -19,6 +22,10 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body):
 	if body.is_in_group("characters") and is_deadly:
+		player = body
+		playercollect()
+		await get_tree().create_timer(0.1).timeout
+		self.queue_free()
 		kill_character(body)
 		emit_signal("sword_retrieved")
 		hide_sword()
@@ -44,3 +51,7 @@ func _on_poisonous_weeds_character_frozen() -> void:
 	sprite.visible = true
 	sword_light.visible = true
 	is_deadly = true
+	
+func playercollect():
+	player.collect(item)
+	

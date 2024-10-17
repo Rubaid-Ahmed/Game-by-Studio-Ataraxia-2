@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var character_camera: Camera2D = $BlueElf_Camera
 @onready var inventory_ui: Control = $InventoryUI
 
+@onready var torch = preload("res://Inventory/items/torch.tres")
 
 @export var speed : int = 500
 @export var max_horizontal_speed : int = 300
@@ -26,6 +27,8 @@ func _ready():
 		slot.item = null
 		slot.amount = 0
 		inventory.slots.append(slot)
+		
+	inventory.insert(torch)
 	
 	# Setup inventory UI
 	if inventory_ui:

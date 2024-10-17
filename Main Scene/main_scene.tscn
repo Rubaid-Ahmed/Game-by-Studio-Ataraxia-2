@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://44xtea55rj0w"]
+[gd_scene load_steps=16 format=3 uid="uid://44xtea55rj0w"]
 
 [ext_resource type="PackedScene" uid="uid://ctxf4462ym2w7" path="res://Maze/tile_map.tscn" id="1_7da0c"]
 [ext_resource type="Script" path="res://Main Scene/main_scene.gd" id="1_emlyo"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bw1jg6r4km4c6" path="res://Main Scene/stick_collectible.tscn" id="11_xuxvn"]
 [ext_resource type="PackedScene" uid="uid://b8vd6hyknxt8d" path="res://Main Scene/slime_collectible.tscn" id="12_i43wb"]
 [ext_resource type="PackedScene" uid="uid://cy7c33hum0g15" path="res://New_Players/Chainsaw man.tscn" id="13_ljlj3"]
+[ext_resource type="PackedScene" uid="uid://ekw7s4eafvo1" path="res://Main Scene/coin_bag_collectible.tscn" id="14_4myrk"]
 
 [sub_resource type="GDScript" id="GDScript_jxfy6"]
 script/source = "extends Camera2D
@@ -142,6 +143,9 @@ position = Vector2(2600, -620)
 position = Vector2(2673, -615)
 
 [node name="ChainsawMan_Camera" type="Camera2D" parent="chainsaw man"]
+
+[node name="Coin_bag" parent="." instance=ExtResource("14_4myrk")]
+position = Vector2(2541, -648)
 
 [connection signal="body_entered" from="PoisonousWeeds" to="PoisonousWeeds" method="_on_body_entered"]
 [connection signal="character_frozen" from="PoisonousWeeds" to="Sword" method="_on_poisonous_weeds_character_frozen"]
